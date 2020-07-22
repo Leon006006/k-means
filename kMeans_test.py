@@ -13,16 +13,17 @@ X, y = make_classification(n_samples=1000, n_features=2, n_informative=2, n_redu
 X[:, 0] = X[:, 0]/max(abs(X[:, 0]))
 X[:, 1] = X[:, 1]/max(abs(X[:, 1]))
 X = X.T
-
+plt.plot(X[0, 0], X[1, 0], 'r+')
 '''
-# Copied from https://machinelearningmastery.com/clustering-algorithms-with-python/
+# Plot loop taken from
+# https://machinelearningmastery.com/clustering-algorithms-with-python/
 for class_value in range(2):
-    # get row indexes for samples with this class
-    row_ix = where(y == class_value)
+    # get column indices for samples with this class
+    column_ix = where(y == class_value)
     # create scatter of these samples
-    plt.scatter(X[0, row_ix], X[1, row_ix])
+    plt.scatter(X[0, column_ix], X[1, column_ix])
 plt.show()
 '''
 
 test_means = kMeans.kMeans(X)
-test_means.cluster()
+test_means.cluster(4, 20)
