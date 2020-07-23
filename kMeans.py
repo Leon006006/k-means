@@ -48,7 +48,7 @@ class kMeans:
                     continue
                 means[:, class_value, i] = (1 / magnitude_cluster) * sum_cluster
                 # Plot new means
-                plt.plot(means[0, class_value, i], means[1, class_value, i], 'r*', markersize=20)
+                plt.scatter(means[0, class_value, i], means[1, class_value, i], marker='+')
 
             plt.show()
 
