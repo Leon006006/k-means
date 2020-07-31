@@ -52,7 +52,7 @@ class kMeans:
 
             plt.show()
 
-            if linalg.norm(np.subtract(means[:, :, i-1], means[:, :, i])) < 10 ** -5:
+            if linalg.norm(np.subtract(means[:, :, i-1], means[:, :, i])) < 10 ** -4:
                 print("Cluster-Means aren't changing anymore")
                 return means[:, :, i]
 
